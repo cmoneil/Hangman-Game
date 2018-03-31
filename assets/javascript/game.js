@@ -51,6 +51,8 @@ document.onkeyup = function (event) {
 
         console.log(letterGuessed.indexOf(userGuess));
 
+        //attempt to not allow multiple guesses of same letter
+
         //if (letterGuessed.indexOf(userGuess) == -1 ){
         //    return;
         //}
@@ -76,9 +78,14 @@ document.onkeyup = function (event) {
     document.getElementById("numberLeft").innerHTML = guesses;
 
     document.getElementById("letterGuessed").innerHTML = letterGuessed.join(' ')
+
+    console.log(dashArray.length);
+    console.log(chosenHangWord.length);
+    
+
+    // attempt to get the game to account for wins
     
     
-    
-    ;
 
 }
+
