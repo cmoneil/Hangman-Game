@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-    
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+
 
     <title>90's Stuff</title>
 </head>
@@ -17,43 +21,53 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-3">90's Stuff Hangman</h1>
-            <p class="lead">90's Stuff Hangman</p>
+            <h1 class="display-3">
+                <div class="year">90's</div>
+                Stuff Hangman</h1>
         </div>
     </div>
 
-    
+
 
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <img src="assets/images/350x350.png">
+                <img src="assets/images/90s_pic.jpg">
             </div>
             <div class="col-6">
-                <div class="row">
-                    <div class="col-12">
-                        <p>Press any key to get started!</p>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Press any key to get started!</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p>Wins</p>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Wins</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p>Current Word<div id = "dashArray"></div></p>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Current Word
+                                <div id="dashArray"></div>
+                            </p>
 
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p>Number of Guesses remaining:<div id="numberLeft"></div></p>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Number of Guesses remaining:
+                                <div id="numberLeft"></div>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p>Letters already guessed:<div id="letterGuessed"></div></p>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Letters already guessed:
+                                <div id="letterGuessed"></div>
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </div>

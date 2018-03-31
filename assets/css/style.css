@@ -1,0 +1,26 @@
+body {
+    font-family: 'Permanent Marker', cursive;
+    color: black;
+    background-image: url(../images/90s_background.jpg)
+}
+
+.year {
+    color: teal;
+    font-size: 200px;
+    text-align: center;
+}
+
+.jumbotron {
+    text-align: center;
+    background: yellow;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.content {
+    background-color: #d3307d;
+    text-align: center;
+
+}
+
+
