@@ -57,13 +57,15 @@ document.onkeyup = function (event) {
         //    return;
         //}
 
-        
+        console.log(guessMatches);
 
         dashArray[index] = letter;
 
             console.log(guesses);
 
     });
+
+    
 
     letterGuessed.push(userGuess);
 
@@ -81,8 +83,17 @@ document.onkeyup = function (event) {
 
     console.log(dashArray.length);
     console.log(chosenHangWord.length);
-    
 
+    //alerts win sort of
+    
+    if (chosenHangWord.length == letterGuessed.length) {
+        alert("Win");
+        wins = wins + 1;
+    
+    }
+
+    document.getElementById("wins").innerHTML = wins;
+    
     // attempt to get the game to account for wins
     
     
