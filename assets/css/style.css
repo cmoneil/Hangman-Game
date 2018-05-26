@@ -23,4 +23,18 @@ body {
 
 }
 
+#picture {
+    background-color: #d3307d;
+    text-align: center;
+    font-size: 25px;
+
+}
+
+.pic{
+    margin: auto;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
 

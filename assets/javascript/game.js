@@ -4,6 +4,8 @@ var hangWords = ["RADIOHEAD", "NIRVANA", "CRANBERRIES", "TUPAC", "FRIENDS", "CLU
 var wins = 0;
 var guesses = 12;
 var letterGuessed = [];
+var userGuess;
+var guessArray=[];
 
 // Randomly chooses a choice from the options array. This is the Computer's guess.
 var chosenHangWord = hangWords[Math.floor(Math.random() * hangWords.length)];
@@ -12,91 +14,105 @@ var chosenHangWord = hangWords[Math.floor(Math.random() * hangWords.length)];
 var dashArray = [];
 var hangWordArray = chosenHangWord.split('');
 
-console.log('1', chosenHangWord);
+console.log(chosenHangWord);
 
+
+function dashBuild() {
 for (var i = 0; i < chosenHangWord.length; i++) {
     dashArray.push('-');
 }
 
-console.log('2', dashArray);
 
 document.getElementById("dashArray").innerHTML = dashArray.join(' ');
+
+};
 
 // Generates the length of the choice from the array.
 // This function is run whenever the user presses a key.
 document.onkeyup = function (event) {
     // Determines which key was pressed.
-    var userGuess = event.key.toUpperCase();
+    userGuess = event.key.toUpperCase();
 
     console.log('keyup', userGuess);
 
-    console.log(event.keyCode)
 
-    if (event.keyCode < 64 || event.keyCode >91) {
+//Don't push to guesses array or count aga 
+
+
+    console.log(event.keyCode)
+    guessArray.forEach(function(element){
+        console.log(element);
+    })
+
+    if (event.keyCode < 64 || event.keyCode > 91) {
+        return;
+    };
+   // console.log(guessArray.forEach())
+    // if (userguess === guessArray.forEach() ){
+    //     alert('You have already guessed that!');
+    // }
+
+
+};
+
+hangWordArray.forEach(function (letter, index) {
+    var guessMatches = userGuess === letter;
+    console.log('keyup foreach', guessMatches);
+    console.log(letter);
+
+
+    if (!guessMatches) {
         return;
     }
 
-    
-    
+    console.log(letterGuessed.indexOf(userGuess));
 
-    hangWordArray.forEach(function (letter, index) {
-        var guessMatches = userGuess === letter;
-        console.log('keyup foreach', guessMatches);
+    //attempt to not allow multiple guesses of same letter
 
-        
+    //if (letterGuessed.indexOf(userGuess) == -1 ){
+    //    return;
+    //}
 
-        if (!guessMatches) {
-            return;
-        }
+    console.log(guessMatches);
 
-        console.log(letterGuessed.indexOf(userGuess));
+    dashArray[index] = letter;
 
-        //attempt to not allow multiple guesses of same letter
+    console.log(guesses);
 
-        //if (letterGuessed.indexOf(userGuess) == -1 ){
-        //    return;
-        //}
+});
 
-        console.log(guessMatches);
 
-        dashArray[index] = letter;
 
-            console.log(guesses);
+letterGuessed.push(userGuess);
 
-    });
-
-    
-
-    letterGuessed.push(userGuess);
-
-    console.log(letterGuessed);
+console.log(letterGuessed);
 
 //if letterGuessed.indexOf()
 
-    guesses = guesses - 1;
+guesses = guesses - 1;
 
-    document.getElementById("dashArray").innerHTML = dashArray.join(' ');
+document.getElementById("dashArray").innerHTML = dashArray.join(' ');
 
-    document.getElementById("numberLeft").innerHTML = guesses;
+document.getElementById("numberLeft").innerHTML = guesses;
 
-    document.getElementById("letterGuessed").innerHTML = letterGuessed.join(' ')
+document.getElementById("letterGuessed").innerHTML = letterGuessed.join(' ')
 
-    console.log(dashArray.length);
-    console.log(chosenHangWord.length);
+console.log(dashArray.length);
+console.log(chosenHangWord.length);
 
-    //alerts win sort of
-    
-    if (chosenHangWord.length == letterGuessed.length) {
-        alert("Win");
-        wins = wins + 1;
-    
-    }
+//alerts win sort of
 
-    document.getElementById("wins").innerHTML = wins;
-    
-    // attempt to get the game to account for wins
-    
-    
+if (chosenHangWord.length == letterGuessed.length) {
+    alert("Win");
+    wins = wins + 1;
 
 }
+
+document.getElementById("wins").innerHTML = wins;
+
+    // attempt to get the game to account for wins
+
+dashBuild();
+
+
 
